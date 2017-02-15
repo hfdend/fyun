@@ -43,11 +43,13 @@ div {
 <table>
 	<tr>
 		<td>文件</td>
+		<td>类型</td>
 		<td>大小</td>
 	</tr>
 	{{range .}}
 	<tr>
 		<td><a href="{{if .List}}{{.Name}}{{else}}%s{{.Path}}{{end}}">{{.Name}}</a></td>
+		<td>{{if .List}}目录{{else}}文件{{end}}</td>
 		<td>{{.Size}}</td>
 	</tr>
 	{{end}}
